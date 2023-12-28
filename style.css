@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: rgb(27, 27, 50);
+    padding-block: 30px;
+}
+:root{
+    --text-color : #fff
+}
+h1{
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+form{
+    width: 40%;
+    margin: auto;
+}
+form > *{
+    margin-block-end: 15px;
+}
+form > span{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+}
+legend{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color:var(--text-color)
+}
+fieldset{
+    padding: .6rem 1rem;
+}
+button{
+    padding: 7px 10px;
+    background-color: rgb(254, 204, 76);
+    border: 1.4px solid rgb(254, 172, 50);
+}
+input, select{
+    padding: 5px;
+}
