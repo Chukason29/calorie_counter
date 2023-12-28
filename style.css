@@ -40,6 +40,7 @@ button{
     padding: 7px 10px;
     background-color: rgb(254, 204, 76);
     border: 1.4px solid rgb(254, 172, 50);
+    cursor: pointer;
 }
 input, select{
     padding: 5px;
