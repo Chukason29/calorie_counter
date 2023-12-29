@@ -80,6 +80,15 @@ function calculateCalories(e) {
     const dinnerCalories = getCaloriesFromInputs(dinnerNumberInputs)
     const snacksCalories = getCaloriesFromInputs(snacksNumberInputs)
     const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs)
+
+    // collects the original budget 
+    const budgetCalories = getCaloriesFromInputs([budgetNumberInput])
+
+    if (isError){
+        return
+    }
+    // collects the consumed calorie of breakfast, lunch, dinner and snacks
+    const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories
   
   }
 addEntryButton.addEventListener('click', addEntry)
