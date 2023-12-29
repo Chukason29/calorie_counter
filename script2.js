@@ -17,12 +17,15 @@ function isInvalidInput(str) {
     const regex = /\d+e\d+/i;
     return str.match(regex);
 }
-function addEntry() {
+function addEntry(event) {
+    event.preventDefault()
     //This code dynamically picks the html element based of the category selected
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
 
     //Inside the t
-    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
+
+    //Using html literal to hold html values
     const HTMLString = `
     <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
     <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
@@ -33,6 +36,6 @@ function addEntry() {
       id="${entryDropdown.value}-${entryNumber}-calories"
       placeholder="Calories"
     />`;
-    targetInputContainer.innerHTML += HTMLString;
+    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 addEntryButton.addEventListener('click', addEntry)

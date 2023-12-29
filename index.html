@@ -12,7 +12,7 @@
 <body>
     <h1>Calorie Counter</h1>
     <form action="" id="calorie_form">
-        <span>Budget:</span> <input type="number" name="budget" id="budget" placeholder="Daily Calorie budget">
+        <span>Budget:</span> <input type="number" name="budget" id="budget" placeholder="Daily Calorie budget" required>
         <fieldset>
             <legend><h4>Breakfast</h4></legend>
             <div id="breakfast">
@@ -45,17 +45,17 @@
         </fieldset>
         <span>Add food or exercise: </span>
         
-        <select name="" id="">
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Snacks">Snacks</option>
-            <option value="Exercise">Exercise</option>
+        <select name="" id="category">
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="snacks">Snacks</option>
+            <option value="exercise">Exercise</option>
         </select>
-        <button type="submit">Add Entry</button>
+        <button type="button" id="add-entry">Add Entry</button>
         <br>
         <button type="submit">Calculate Remaining Calories</button>
-        <button type="submit">Clear</button>
+        <button type="button">Clear</button>
     </form>
     <script src="./script.js"></script>
 </body>

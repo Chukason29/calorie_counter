@@ -36,6 +36,13 @@ legend{
 fieldset{
     padding: .6rem 1rem;
 }
+fieldset p {
+    color:#fff
+}
+fieldset input {
+    width: 80%;
+    height: 22px;
+}
 button{
     padding: 7px 10px;
     background-color: rgb(254, 204, 76);
