@@ -2,6 +2,7 @@
 const budget = document.getElementById("budget");
 const category = document.getElementById("category")
 const addEntryButton = document.getElementById("add-entry")
+const calculateCalories = document.getElementById("calculateCalories")
 
 
 function addEntry(event) {
@@ -20,7 +21,25 @@ function addEntry(event) {
     categoryDiv.insertAdjacentHTML("beforeend", categoryHTML)
     console.log(categoryTextInputs);
 }
-function collectCalorieData () {
-    
+function collectCalorieData (items) {
+    items = Array.from(items)
+    let calories = 0
+    for (let i = 0; i < items.length; i++) {
+        const element = items[i];
+        calories += element.value
+    }
+    return calories
+}
+function calculateCalorie(e)
+{
+    e.preventDefault()
+    const breakFastInput = collectCalorieData(document.querySelectorAll("#breakfast input[type=number]"))
+    const lunchInput = collectCalorieData(document.querySelectorAll("#lunch input[type=number]"))
+    const dinnerInput = collectCalorieData(document.querySelectorAll("#dinner input[type=number]"))
+    const snacksInput = collectCalorieData(document.querySelectorAll("#snacks input[type=number]"))
+    const exerciseInput = collectCalorieData(document.querySelectorAll("#exercise input[type=number]"))
+
+    console.log(breakFastInput);
 }
 addEntryButton.addEventListener("click", addEntry)
+calculateCalories.addEventListener("submit", calculateCalorie)
