@@ -109,6 +109,13 @@ function calculateCalories(e) {
     // a nodeList looks like an array but not a array.to convert is to a proper
     // array we the use the Array.from()
     const inputContainers = Array.from(document.querySelectorAll('.input-container'))
+    for (let i = 0; i < inputContainers.length; i++) {
+        const element = inputContainers[i];
+        element.innerHTML = ""
+    }
+    budgetNumberInput.value = ""
+    output.classList.add("hide")
   }
 addEntryButton.addEventListener('click', addEntry)
 calorieCounter.addEventListener('submit', calculateCalories)
+clearButton.addEventListener("click", clearForm)
