@@ -18,7 +18,9 @@ function isInvalidInput(str) {
     return str.match(regex);
 }
 function addEntry(event) {
+    // This code makes the form not to reload
     event.preventDefault()
+
     //This code dynamically picks the html element based of the category selected
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
 
@@ -38,4 +40,40 @@ function addEntry(event) {
     />`;
     targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
+
+//This function dynamically gets inputs from custom fields
+function getCaloriesFromInputs(list) {
+    let calories = 0;
+    
+    for (let i = 0; i < list.length; i++) {
+
+        //cleaning the number input
+        const currVal = cleanInputString(list[i].value);
+
+        //checking if input is valid
+        let invalidInputMatch = isInvalidInput(currVal)
+        if (invalidInputMatch) {
+            isError = true
+            return null
+        }
+        calories += Number(currVal)
+    }
+    return calories
+}
+function calculateCalories(e) {
+    e.preventDefault();
+    isError = false;
+  
+    const breakfastNumberInputs = document.querySelectorAll('#breakfast input[type=number]');
+    const lunchNumberInputs = document.querySelectorAll('#lunch input[type=number]');
+    const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
+    const snacksNumberInputs = document.querySelectorAll('#snacks input[type=number]');
+    const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
+    const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs)
+    const lunchCalories = getCaloriesFromInputs(lunchNumberInputs)
+    const dinnerCalories = getCaloriesFromInputs(dinnerNumberInputs)
+    const snacksCalories = getCaloriesFromInputs(snacksNumberInputs)
+    const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs)
+  
+  }
 addEntryButton.addEventListener('click', addEntry)
