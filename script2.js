@@ -60,15 +60,21 @@ function getCaloriesFromInputs(list) {
     }
     return calories
 }
+
+
+//This function collects the value of input by category
 function calculateCalories(e) {
     e.preventDefault();
     isError = false;
-  
+    
+    //These variables collects all number inputs from each category as NodeList
     const breakfastNumberInputs = document.querySelectorAll('#breakfast input[type=number]');
     const lunchNumberInputs = document.querySelectorAll('#lunch input[type=number]');
     const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
     const snacksNumberInputs = document.querySelectorAll('#snacks input[type=number]');
     const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
+    
+    //These variables collects the calculated calories from each category
     const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs)
     const lunchCalories = getCaloriesFromInputs(lunchNumberInputs)
     const dinnerCalories = getCaloriesFromInputs(dinnerNumberInputs)
