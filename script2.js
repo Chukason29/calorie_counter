@@ -103,5 +103,12 @@ function calculateCalories(e) {
     output.classList.remove('hide');
   
   }
+  //This function clears the input fields created in each category
+  function clearForm() {
+    // inputContainers return a NodeList when queried with querySelectorAll
+    // a nodeList looks like an array but not a array.to convert is to a proper
+    // array we the use the Array.from()
+    const inputContainers = Array.from(document.querySelectorAll('.input-container'))
+  }
 addEntryButton.addEventListener('click', addEntry)
 calorieCounter.addEventListener('submit', calculateCalories)
